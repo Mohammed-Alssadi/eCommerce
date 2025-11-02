@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+/* google font inter  */
+
+    
+  
+body {
+  font-family: 'Inter', sans-serif;
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+*{
+   font-family: 'Montserrat', sans-serif; 
+}
+
+
+.custom-dot{
+  background-color:#0a6ec09f;
+}
+.custom-dot:hover {
+  transform: scale(1.2);
+  background-color: #3490dc; /* أي لون تحبه */
+  opacity: 1;
+}
+
+.slick-dots li.slick-active div {
+  background-color: #3490dc;
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+
+.swiper {
+
+ 
+}
+/* الأسهم العامة */
+.custom-carousel .p-carousel-prev,
+.custom-carousel .p-carousel-next {
+  overflow: hidden;
+  top: 50%;
+  transform: translateY(50%);
+  color: brown !important;
+  border-radius: 50%;
+  background-color: #c3d0d1 !important;
+  width: 40px;       /* عرض السهم */
+  height: 40px;      /* ارتفاع السهم */
+ /* حجم أيقونة السهم */
+ 
+  align-items: center;
+
+  z-index: 10;
+}
+
+/* الأسهم للهاتف (الشاشات ≤ 768px) */
+@media (max-width: 768px) {
+  .custom-carousel .p-carousel-prev,
+  .custom-carousel .p-carousel-next {
+     transform: translateY(50%);
+    width: 12px;
+    height: 20px;
+   
+    left: 0px;       /* المسافة عن الجانب الأيسر */
+    right: 0px; 
+    padding: 0px;     /* المسافة عن الجانب الأيمن */
+  }
+}
+
+/* النقاط العامة */
+.custom-carousel .p-carousel-indicators .p-carousel-indicator {
+      /* لون النقاط العادية */
+  width: 12px;                      
+  height: 10px;
+  margin: 0 4px;                    
+  border-radius: 50%;               /* شكل دائري */
+  margin-top: 15px;                 
+  transition: all 0.3s ease;
+}
+
+/* النقطة النشطة */
+.custom-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight {
+  background-color: #ff4081;        /* لون النقطة النشطة */
+}
+
+/* النقاط على الهاتف */
+@media (max-width: 768px) {
+  .custom-carousel .p-carousel-indicators .p-carousel-indicator {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+  }
+}
+
+
+
+/* ملف CSS الخاص بك */
+.custom-carousel .p-carousel-indicators .p-carousel-indicator {
+  background-color: #cdd7d8;       /* لون النقاط العادية */
+  width: 13px;                      /* حجم النقاط */
+  height: 10px;
+  margin: 0 4px;                    /* مسافة بين النقاط */
+  border-radius: 10%;
+  margin-top: 30px               /* شكل دائري */;                    /* شفافية */
+  transition: all 0.3s ease;
+}
+
+.custom-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight {
+  background-color: #ff4081;        /* لون النقطة النشطة */
+
+}
+
+
+
+
+.slider_container>.slick-slider>.slick-dots>li.slick-active button:before {
+    color: #007580 !important;
+}
+/* تغيير لون النقاط */
+.slick-dots li button::before{
+  margin-top: 35px!important;
+}
+.slick-dots li button:before {
+  color: #dfdddd98 !important; /* أحمر Tailwind (red-500) */
+  opacity: 1 !important;
+  font-size: 10px !important;
+}
+
+/* النقطة النشطة */
+.slick-dots li.slick-active button:before {
+  color: #8b8888 !important; /* أحمر أغمق (red-700) */
+}
+/* تحسين شكل أزرار الـ Pagination من PrimeReact */
+.custom-dataview .p-paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 0.4rem;
+}
+
+.custom-dataview .p-paginator .p-paginator-page,
+.custom-dataview .p-paginator .p-paginator-prev,
+.custom-dataview .p-paginator .p-paginator-next {
+  border: none;
+  background-color: #992227 !important; /* رمادي فاتح */
+  color: #333 !important ;
+  width: 36px !important ;
+  height: 36px;
+  font-weight: 600;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.custom-dataview .p-paginator .p-paginator-page:hover,
+.custom-dataview .p-paginator .p-paginator-prev:hover,
+.custom-dataview .p-paginator .p-paginator-next:hover {
+  background-color: #1e293b; /* أزرق غامق */
+  color:yellow;
+  transform: scale(1.05);
+}
+
+/* الصفحة النشطة */
+.custom-dataview .p-paginator .p-highlight {
+  background-color: #0ea5e9 !important; /* سماوي */
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(14,165,233,0.4);
+}
+
+
+/* === إصلاح موضع الأسهم في PrimeReact Carousel === */
+.p-carousel {
+  position: relative;
+  overflow: visible !important;
+}
+
+.p-carousel-prev,
+.p-carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.p-carousel-prev {
+  left: -20px;
+}
+
+.p-carousel-next {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .p-carousel-prev,
+  .p-carousel-next {
+    display: none;
+  }
+}
+
+
